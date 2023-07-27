@@ -28,12 +28,8 @@ public class ButtonPlatform : MonoBehaviour
     private void ChangeColor(bool isPressed)
     {
         if (isPressed)
-        {
             _spriteRenderer.color = Color.red;
-        }
         else
-        {
             _spriteRenderer.color = Color.yellow;
-        }
     }
 }

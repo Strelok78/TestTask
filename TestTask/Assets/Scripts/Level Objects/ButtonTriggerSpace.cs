@@ -9,13 +9,17 @@ public class ButtonTriggerSpace : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.TryGetComponent<HeroMovement>(out _))
-            OnTriggerEnter?.Invoke(true);
+        MakeAction(collision, true);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.TryGetComponent<HeroMovement>(out _) ) //добавить item
-            OnTriggerEnter?.Invoke(false);
+        MakeAction(collision, false);
+    }
+
+    private void MakeAction(Collider2D collision, bool isPressed)
+    {
+        if (collision.TryGetComponent<HeroMovement>(out _) || collision.TryGetComponent<ItemSummoner>(out _))
+            OnTriggerEnter?.Invoke(isPressed);
     }
 }

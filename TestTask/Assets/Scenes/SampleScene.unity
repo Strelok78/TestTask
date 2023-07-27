@@ -135,7 +135,6 @@ GameObject:
   - component: {fileID: 81730345}
   - component: {fileID: 81730344}
   - component: {fileID: 81730346}
-  - component: {fileID: 81730347}
   m_Layer: 0
   m_Name: Sunroof
   m_TagString: Untagged
@@ -152,7 +151,7 @@ Transform:
   m_GameObject: {fileID: 81730342}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: -1.5, z: -0.026661064}
+  m_LocalPosition: {x: 1, y: -1.5, z: 0}
   m_LocalScale: {x: 3, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -268,28 +267,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _buttonTriggerSpace: {fileID: 1943293575}
-  _closingSpeed: 0
---- !u!95 &81730347
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 81730342}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5d89b6d298ae7a945a1ae71890b5379c, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -730,8 +707,9 @@ GameObject:
   - component: {fileID: 1263787692}
   - component: {fileID: 1263787691}
   - component: {fileID: 1263787690}
-  - component: {fileID: 1263787693}
   - component: {fileID: 1263787694}
+  - component: {fileID: 1263787693}
+  - component: {fileID: 1263787695}
   m_Layer: 0
   m_Name: Hero
   m_TagString: Untagged
@@ -835,7 +813,7 @@ Transform:
   m_GameObject: {fileID: 1263787689}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7, y: -0.35, z: 0}
+  m_LocalPosition: {x: 7.47, y: 0.54, z: 0}
   m_LocalScale: {x: 2, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -881,6 +859,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1263787695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1263787689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f16d94cef17f60479f0d6157b1bc33e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _item: {fileID: 1897577286}
+  _heroWaitColor: {r: 0, g: 1, b: 0.09511161, a: 1}
+  _itemSummonDistance: 4
 --- !u!1 &1834983147
 GameObject:
   m_ObjectHideFlags: 0
@@ -1023,6 +1016,7 @@ GameObject:
   - component: {fileID: 1897577288}
   - component: {fileID: 1897577290}
   - component: {fileID: 1897577289}
+  - component: {fileID: 1897577291}
   m_Layer: 0
   m_Name: Item
   m_TagString: Untagged
@@ -1159,6 +1153,20 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &1897577291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1897577286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef4a576f22a11fa45b85dbeeecc1bb9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _heroAction: {fileID: 1263787695}
+  _basicDistanceToItem: 2
 --- !u!1 &1943293571
 GameObject:
   m_ObjectHideFlags: 0
